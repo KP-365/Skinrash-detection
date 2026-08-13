@@ -13,9 +13,9 @@ This repository contains the full implementation, trained models, and evaluation
 | File | What it contains |
 |---|---|
 | [`BugBites_NoAug.ipynb`](./BugBites_NoAug.ipynb) | Clean-only baseline model - trained on the original 896 raw images only, moderate augmentation. See Section 3.3 of the report ("Clean-only" strategy). |
-| [`BugBitesAug.ipynb`](./BugBitesAug.ipynb) | Pooled/Augmented model training - includes the dataset merging and leakage-safe 70/15/15 split (Section 3.1 and 5.1 of the report). |
-| [`BugBitesAug2.ipynb`](./BugBitesAug2.ipynb) | Aggressive-Aug and Tuned (final) model training the split before augmenting methodology (live, on the fly augmentation only, Section 3.2) and the two-phase training loop. This notebook produces `best_model_aggaug_final.pt` and, using the winning config from the grid search, `best_model_tuned_final.pt`. |
-| [`bruteforcelol.ipynb`](./bruteforcelol.ipynb) | Hyperparameter grid search (Section 3.4 of the report) tests all combinations of dropout probability, fine-tune learning rate, and number of unfrozen blocks using short, capped-epoch runs, ranked by validation accuracy. The winning configuration (dropout=0.3, fine-tune LR=1e-4, last 3 blocks unfrozen) was then retrained to full convergence in `BugBitesAug2.ipynb` to produce the final tuned model. |
+| [`BugBitesAug.ipynb`](./BugBitesAug.ipynb) | Pooled/Augmented model training - includes the dataset merging and leakage safe 70/15/15 split (Section 3.1 and 5.1 of the report). |
+| [`BugBitesAug2.ipynb`](./BugBitesAug2.ipynb) | Aggressive-Aug and Tuned (final) model training the split before augmenting methodology (live, on the fly augmentation only, Section 3.2) and the two phase training loop. This notebook produces `best_model_aggaug_final.pt` and, using the winning config from the grid search, `best_model_tuned_final.pt`. |
+| [`bruteforcelol.ipynb`](./bruteforcelol.ipynb) | Hyperparameter grid search (Section 3.4 of the report) tests all combinations of dropout probability, fine-tune learning rate, and number of unfrozen blocks using short, capped epoch runs, ranked by validation accuracy. The winning configuration (dropout=0.3, fine-tune LR=1e-4, last 3 blocks unfrozen) was then retrained to full convergence in `BugBitesAug2.ipynb` to produce the final tuned model. |
 
 ### Evaluation
 
@@ -40,7 +40,7 @@ All checkpoints are in [`models/trained_models/`](./models/trained_models/):
 
 ### Report and figures
 
-The full IEEE-format report (PDF) covers methodology, all four evaluation figures (confusion matrix, ROC curves, entropy histogram, reliability diagram), and the complete analysis. All figures referenced in the report are generated directly by `Eval/Eval.ipynb` and can be reproduced by running that notebook end-to-end.
+The full IEEE-format report (PDF) covers methodology, all four evaluation figures (confusion matrix, ROC curves, entropy histogram, reliability diagram), and the complete analysis. All figures referenced in the report are generated directly by `Eval/Eval.ipynb` and can be reproduced by running that notebook end to end.
 
 ---
 
